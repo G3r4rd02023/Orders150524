@@ -19,6 +19,11 @@ namespace Orders.Backend
             builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=LocalConnection"));
             var app = builder.Build();
 
+            app.UseCors(x => x.AllowAnyMethod()
+            .AllowAnyHeader()
+            .SetIsOriginAllowed(origin => true)
+            .AllowCredentials());
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
