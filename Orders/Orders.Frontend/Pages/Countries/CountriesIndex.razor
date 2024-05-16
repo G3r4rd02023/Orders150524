@@ -22,8 +22,8 @@
                     <tr>
                         <th>@country.Name</th>
                         <th>
-                            <a class=" btn btn-warning btn-sm">Editar</a>
-                            <button class=" btn btn-danger btn-sm">Borrar</button>
+                            <a href="/countries/edit/@country.Id"class=" btn btn-warning btn-sm">Editar</a>
+                            <button @onclick=@(()=> DeleteAsync(country)) class=" btn btn-danger btn-sm">Borrar</button>
                         </th>
                     </tr>
                 }
